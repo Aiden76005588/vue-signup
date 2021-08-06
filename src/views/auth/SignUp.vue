@@ -47,7 +47,7 @@
 
             <v-text-field
               v-model="passwordConfirm"
-              :rules="passwordRules"
+              :rules="confirmPasswordRules"
               label="비밀번호 확인"
               required
             ></v-text-field>
@@ -91,6 +91,11 @@ export default {
     passwordRules: [
       (v) => !!v || "Password is required",
       (v) => (v && v.length > 8) || "Password must be more than 8 characters",
+    ],
+    confirmPasswordRules: [
+      (v) => !!v || "type confirm password",
+
+      (v) => v === this.password || "The password confirmation does not match.",
     ],
 
     passwordConfirm: "",

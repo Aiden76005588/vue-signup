@@ -32,6 +32,31 @@
         <span class="mr-2">로그인</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
+      <div class="text-center">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              class="mt-2"
+              color="deep-purple accent-4"
+              dark
+              v-bind="attrs"
+              v-on="on"
+            >
+              violet
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in items"
+              :key="index"
+              :to="item.to"
+              link
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
     </v-app-bar>
 
     <v-main>
@@ -43,6 +68,7 @@
 <script>
 export default {
   name: "App",
+
   methods: {
     GotoPage() {
       location.href = "/signup";
@@ -52,6 +78,11 @@ export default {
   },
   data: () => ({
     //
+    items: [
+      { title: "회원정보", to: "/userinfo" },
+      { title: "찜한글", to: "/userlike" },
+      { title: "내가 쓴 게시글", to: "/usercontentedit" },
+    ],
   }),
 };
 </script>
