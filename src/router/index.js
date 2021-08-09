@@ -85,6 +85,34 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "SignUP" */ "../views/dashboard/Board.vue"),
   },
+  {
+    path: "/boardlist",
+    name: "BoardList",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(
+        /* webpackChunkName: "SignUP" */ "../views/dashboard/BoardList.vue"
+      ),
+  },
+  {
+    path: "/modal",
+    name: "Modal",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "SignUP" */ "../components/Modal.vue"),
+  },
+  {
+    path: "/board/free/detail/",
+    name: "ContentDetail",
+    component: () =>
+      import(
+        /* webpackChunkName: "SignUP" */ "../views/dashboard/ContentDetail.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({

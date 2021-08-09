@@ -31,7 +31,7 @@ export default {
     return {
       items: [
         { title: "회원정보", icon: "mdi-view-dashboard", to: "/userinfo" },
-        { title: "자유게시판", icon: "mdi-image", to: "/board" },
+        { title: "자유게시판", icon: "mdi-image", to: "/boardlist" },
         { title: "About", icon: "mdi-help-box" },
       ],
     };

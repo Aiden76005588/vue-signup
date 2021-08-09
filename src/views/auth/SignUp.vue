@@ -105,19 +105,15 @@ export default {
 
   methods: {
     validate() {
-      if (this.password === this.passwordConfirm) {
-        this.$refs.form.validate();
-      } else {
-        alert("Password must match");
-      }
+      this.$refs.form.validate();
     },
   },
-  computed: {
-    passwordConfirmationRule() {
-      return () =>
-        this.password === this.passwordConfirm || "Password must match";
-    },
-  },
+  //   computed: {
+  //     passwordConfirmationRule() {
+  //       return () =>
+  //         this.password === this.passwordConfirm || "Password must match";
+  //     },
+  //   },
 };
 </script>
 
