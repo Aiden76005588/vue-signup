@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar app color="deep-purple accent-4" dark>
+    <v-app-bar app class="appbar-backgound-color" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="@/assets/violetmind_logo.png"
           transition="scale-transition"
           width="40"
         />
@@ -37,7 +37,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-btn
               class="mt-2"
-              color="deep-purple accent-4"
+              color="deep-purple lighten-2"
               dark
               v-bind="attrs"
               v-on="on"
@@ -86,3 +86,8 @@ export default {
   }),
 };
 </script>
+<style>
+.appbar-backgound-color {
+  background: linear-gradient(to right, #6052a5, #9c93c9, #dad7eb);
+}
+</style>

@@ -45,7 +45,6 @@
 
           <v-card-text>
             <v-chip-group
-              v-model="selection"
               active-class="deep-purple accent-4 white--text"
               column
             >
@@ -60,9 +59,7 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="reserve">
-              Reserve
-            </v-btn>
+            <v-btn color="deep-purple lighten-2" text> Reserve </v-btn>
           </v-card-actions>
         </v-card>
 
@@ -77,10 +74,13 @@
             </p>
           </v-card-text>
           <v-card-actions>
-            <v-btn text color="teal accent-4" to="/userlike"> 보러가기 </v-btn>
+            <v-btn text color="deep-purple lighten-2" to="/userlike">
+              보러가기
+            </v-btn>
           </v-card-actions>
         </v-card>
-
+      </v-col>
+      <v-col>
         <v-card class="mx-auto mb-6" max-width="500">
           <v-card-text>
             <div>Word of the Day</div>
@@ -92,7 +92,9 @@
             <p>작성글 4</p>
           </v-card-text>
           <v-card-actions>
-            <v-btn text color="teal accent-4" to="/userinfo"> 보러가기 </v-btn>
+            <v-btn text color="deep-purple lighten-2" to="/userinfo">
+              보러가기
+            </v-btn>
           </v-card-actions>
         </v-card>
 
@@ -107,32 +109,8 @@
             </div>
           </v-card-text>
           <v-card-actions>
-            <v-btn text color="teal accent-4" @click="reveal = true">
-              Learn More
-            </v-btn>
+            <v-btn text color="deep-purple lighten-2"> Learn More </v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <v-card
-              v-if="reveal"
-              class="transition-fast-in-fast-out v-card--reveal"
-              style="height: 100%"
-            >
-              <v-card-text class="pb-0">
-                <p class="text-h4 text--primary">Origin</p>
-                <p>
-                  late 16th century (as a noun denoting a place where alms were
-                  distributed): from medieval Latin eleemosynarius, from late
-                  Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’
-                </p>
-              </v-card-text>
-              <v-card-actions class="pt-0">
-                <v-btn text color="teal accent-4" @click="reveal = false">
-                  Close
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-expand-transition>
         </v-card>
 
         <v-card class="mx-auto" max-width="500">
@@ -146,32 +124,8 @@
             </div>
           </v-card-text>
           <v-card-actions>
-            <v-btn text color="teal accent-4" @click="reveal = true">
-              Learn More
-            </v-btn>
+            <v-btn text color="deep-purple lighten-2"> Learn More </v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <v-card
-              v-if="reveal"
-              class="transition-fast-in-fast-out v-card--reveal"
-              style="height: 100%"
-            >
-              <v-card-text class="pb-0">
-                <p class="text-h4 text--primary">Origin</p>
-                <p>
-                  late 16th century (as a noun denoting a place where alms were
-                  distributed): from medieval Latin eleemosynarius, from late
-                  Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’
-                </p>
-              </v-card-text>
-              <v-card-actions class="pt-0">
-                <v-btn text color="teal accent-4" @click="reveal = false">
-                  Close
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-expand-transition>
         </v-card>
       </v-col>
     </v-row>

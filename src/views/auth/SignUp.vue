@@ -94,7 +94,6 @@ export default {
     ],
     confirmPasswordRules: [
       (v) => !!v || "type confirm password",
-
       (v) => v === this.password || "The password confirmation does not match.",
     ],
 

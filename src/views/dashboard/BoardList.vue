@@ -1,5 +1,6 @@
 <template>
   <div class="mt-10" max-width="800px">
+    <AppBar />
     <v-container>
       <v-row>
         <v-col>
@@ -20,7 +21,7 @@
           >
             <v-img height="213" :src="image.url"></v-img>
           </v-card>
-          <Modal></Modal>
+          <Modal :items="items"></Modal>
         </v-col>
       </v-row>
     </v-container>
@@ -30,8 +31,9 @@
 <script>
 import Modal from "@/components/Modal";
 import data from "@/data";
+import AppBar from "@/components/AppBar";
 export default {
-  components: { Modal },
+  components: { Modal, AppBar },
 
   data() {
     let items = data.FeedImages.sort((a, b) => {
