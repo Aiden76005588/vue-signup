@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <AppBar />
-    <v-continer>
+    <v-container>
       <v-sheet
         :class="radius"
         class="mx-auto mt-12"
@@ -28,7 +28,7 @@
         </v-row>
         <v-col>askdjbakjsbk</v-col>
       </v-sheet>
-    </v-continer>
+    </v-container>
   </v-container>
 </template>
 

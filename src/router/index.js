@@ -113,6 +113,15 @@ const routes = [
         /* webpackChunkName: "SignUP" */ "../views/dashboard/ContentDetail.vue"
       ),
   },
+
+  {
+    path: "/cardtest",
+    name: "CardTest",
+    component: () =>
+      import(
+        /* webpackChunkName: "SignUP" */ "../views/dashboard/CardTest.vue"
+      ),
+  },
 ];
 
 const router = new VueRouter({

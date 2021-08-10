@@ -1,7 +1,50 @@
 <template>
   <div class="mt-10" max-width="800px">
     <AppBar />
-    <v-container>
+    <vs-row vs-justify="center">
+      <vs-col
+        max-width="500px"
+        v-for="(image, i) in feedImages"
+        :key="i"
+        type="flex"
+        vs-justify="center"
+        vs-align="center"
+        vs-w="6"
+      >
+        <vs-card class="cardx">
+          <div slot="header">
+            <h3>Hello world !</h3>
+          </div>
+          <div>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.</span
+            >
+          </div>
+          <div slot="media">
+            <img :src="image.url" alt="" />
+          </div>
+          <div slot="footer">
+            <vs-row vs-justify="flex-end">
+              <vs-button
+                type="gradient"
+                color="danger"
+                icon="favorite"
+              ></vs-button>
+              <vs-button color="primary" icon="turned_in_not"></vs-button>
+              <vs-button
+                color="rgb(230,230,230)"
+                color-text="rgb(50,50,50)"
+                icon="settings"
+              ></vs-button>
+            </vs-row>
+          </div>
+        </vs-card>
+      </vs-col>
+    </vs-row>
+    <!-- <v-container>
       <v-row>
         <v-col>
           <div class="title">최근 게시글</div>
@@ -21,39 +64,60 @@
           >
             <v-img height="213" :src="image.url"></v-img>
           </v-card>
-          <Modal :items="items"></Modal>
         </v-col>
       </v-row>
-    </v-container>
+    </v-container> -->
+
+    <!-- to, router 전부 안먹힌다. -->
+    <div class="con-example-images">
+      <div class="title">최근 게시글</div>
+
+      <vs-images @click="rowClick" :hover="hover">
+        <vs-image
+          :key="index"
+          v-for="(image, index) in 20"
+          :src="`https://picsum.photos/400/400?image=3${index}`"
+        />
+      </vs-images>
+    </div>
+
+    <!-- 사진 사이즈를 맞춰줘야된다 아니면 blur옵션에서 오류뜸 -->
+
+    <!-- <div class="con-example-images">
+      <vs-images :hover="hover">
+        <vs-image :key="i" v-for="(image, i) in feedImages" :src="image.url">
+        </vs-image>
+      </vs-images>
+    </div> -->
   </div>
 </template>
 
 <script>
-import Modal from "@/components/Modal";
 import data from "@/data";
 import AppBar from "@/components/AppBar";
 export default {
-  components: { Modal, AppBar },
+  components: { AppBar },
 
   data() {
-    let items = data.FeedImages.sort((a, b) => {
-      return b.user_id - a.user_id;
-    });
-    items = items.map((contentItem) => {
-      return {
-        ...contentItem,
-        user_name: data.FeedImages.filter(
-          (userItem) => userItem.user_id === contentItem.user_id
-        )[0].name,
-      };
-    });
-    console.log("items------------", items);
+    // let items = data.FeedImages.sort((a, b) => {
+    //   return b.user_id - a.user_id;
+    // });
+    // items = items.map((contentItem) => {
+    //   return {
+    //     ...contentItem,
+    //     user_name: data.FeedImages.filter(
+    //       (userItem) => userItem.user_id === contentItem.user_id
+    //     )[0].name,
+    //   };
+    // });
+    // console.log("items------------", items);
 
     const feedImages = data.FeedImages;
-    console.log(data);
+    // console.log(data);
     return {
+      hover: "blur",
       feedImages: feedImages,
-      items: items,
+      // items: items,
     };
   },
 
@@ -68,4 +132,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.con-example-images {
+  max-height: 500px;
+  overflow: auto;
+}
+.title {
+  margin-left: 30px;
+}
+.cardx {
+  margin-right: 5px;
+}
+</style>
